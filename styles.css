@@ -1,0 +1,62 @@
+html {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    padding:0;
+    color: aliceblue;
+}
+body{
+    margin: 0;
+    padding:0;
+    height: 100%;
+    background-color: rgb(4, 41, 58);
+}
+header{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 30px;
+    background-color: rgb(4, 28, 50);
+    box-shadow: rgba(110, 110, 110, 0.15) 0px 5px 10px;
+}
+div{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+button{
+    background-color: transparent;
+    border-width: 0;
+    font-family: inherit;
+    font-size: 25px;
+    font-style: inherit;
+    font-weight: inherit;
+    padding: 15px;
+    border: 0px;
+    border-radius: 5px;
+    background: rgb(4, 28, 50);
+    color: aliceblue;
+}
+button:hover{
+    background: rgb(4, 28, 50);
+    transition-duration: .2s;
+    border: solid 1px rgb(236, 179, 101)
+}
+button:active{
+    background: rgb(6, 70, 99);
+    transition-duration: .1s;
+    border: solid 1px rgb(236, 179, 101)
+}
+footer{
+    background-color: rgb(4, 28, 50);
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    bottom: 0;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
