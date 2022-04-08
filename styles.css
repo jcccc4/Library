@@ -1,18 +1,18 @@
 html {
-    position: relative;
-    height: 100%;
+    height: 100;
     margin: 0;
     padding:0;
     color: aliceblue;
+   
 }
 body{
     margin: 0;
     padding:0;
-    height: 100%;
     background-color: rgb(4, 41, 58);
 }
+
 header{
-    height: 80px;
+    height: 100px;
     display: flex;
     align-items: center;
     padding-left: 10px;
@@ -20,8 +20,8 @@ header{
     background-color: rgb(4, 28, 50);
     box-shadow: rgba(110, 110, 110, 0.15) 0px 5px 10px;
 }
-div{
-    
+
+.initial{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,18 +45,124 @@ button:hover{
     transition-duration: .2s;
     border: solid 1px rgb(236, 179, 101)
 }
+
 button:active{
     background: rgb(6, 70, 99);
     transition-duration: .1s;
     border: solid 1px rgb(236, 179, 101)
 }
-footer{
+
+.footer{
     background-color: rgb(4, 28, 50);
     width: 100%;
-    position: absolute;
     height: 40px;
-    bottom: 0;
-    padding-left: 10px;
     display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    position: relative;
+    top: 35%;
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 300px;
+    height: 320px;
+    overflow:auto; 
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 4px;
+    right: 16px;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.last{
+    display: flex;
+    flex-direction: column;
+}
+.bookLibrary{
+    display: grid;
+    background-color: blue;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
+    gap: 10px;
+    min-height: calc(100vh - 240px);
+    width:60%;
+    align-self: center;
+    
+}
+
+.bookItems{
+    margin: 20px;
+    padding: 20px;
+    height: 300px;
+    background-color: red;
+    text-align: center;
+    border: 1px black;
+}
+
+
+#sub-btn{
+   margin-bottom: 20px;
+}
+form{
+    color: #000;
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    text-align: center;
+}
+form>input{
+    height: 80px;
+    margin-bottom: 20px;
+}
+form>p{
+    font-size: 20px;
+    margin:auto;
+    padding: 15px;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgb(158, 158, 158);
+  font-size: 1.5em;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: rgb(158, 158, 158);
+  font-size: 1.5em;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: rgb(158, 158, 158);
+  font-size: 1.5em;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: rgb(158, 158, 158);
+  font-size: 1.5em;
 }
