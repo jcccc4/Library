@@ -1,4 +1,20 @@
-let myLibrary = [];
+
+
+const library = document.getElementsByClassName("bookLibrary");
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("book");
+const span = document.getElementsByClassName("close")[0];
+const inputtedData = document.getElementsByClassName("inputtedData");
+
+
+if (!localStorage.getItem('bookList')) {
+    localStorage.setItem('bookList', JSON.stringify([]));
+}
+let bookList = localStorage.getItem('bookList');
+let k = JSON.parse(bookList);
+var myLibrary = JSON.parse(bookList);
+console.log(k, 21312);
+
 
 function Book(title, author, pages) {
     this.title = title;
@@ -7,11 +23,8 @@ function Book(title, author, pages) {
 }
 
 function addBookToLibrary() {
-    const modal = document.getElementById("myModal");
-    let btn = document.getElementById("book");
-    const span = document.getElementsByClassName("close")[0];
-    const inputtedData = document.getElementsByClassName("inputtedData");
-    const library = document.getElementsByClassName("bookLibrary");
+
+
     console.log(library);
 
     btn.onclick = function () {
@@ -27,22 +40,37 @@ function addBookToLibrary() {
     };
 
     document.getElementById("sub-btn").addEventListener("click", function (event) {
-        event.preventDefault();
-        const node = document.createTextNode("This is new.");
-        const items = document.createElement("div");
+
         modal.style.display = "none";
 
-        myLibrary.push(new Book(inputtedData[0].value, inputtedData[1].value, inputtedData[2].value));
+        console.log(bookList);
 
-        items.appendChild(node);
-        items.className = "bookItems";
-        library[0].appendChild(items);
-        console.log(library[0]);
+        myLibrary.push(new Book(inputtedData[0].value, inputtedData[1].value, inputtedData[2].value));
+        localStorage.setItem("bookList", JSON.stringify(myLibrary));
 
     });
 
 }
 
+function Library() {
+    console.log(JSON.parse(bookList).length, 'jk');
+    for (let i = 0; i < JSON.parse(bookList).length; i++) {
+        const items = document.createElement("div");
+        items.className = "bookItems";
+
+        for (let loop in myLibrary[i]) {
+            const description = document.createElement("div");
+            items.appendChild(description);
+            description.className = "description";
+            console.log(myLibrary);
+            description.innerHTML = `${myLibrary[i][loop]}`;
+        }
+
+        library[0].appendChild(items);
+        console.log(library[0]);
+    }
+}
 
 
 addBookToLibrary();
+Library();
