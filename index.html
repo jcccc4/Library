@@ -8,6 +8,9 @@
         <script src="scripts.js" defer></script>
         <link rel="stylesheet" href="styles.css">
         <title>Library</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
 
     <body class="body">
@@ -17,13 +20,18 @@
             <div id="myModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <form>
+                    <form name="myForm" action="/action_page.php" method="post">
                         <p>Add Book</p>
-                        <input type="text" class="inputtedData" placeholder="Title">
-                        <input type="text" class="inputtedData" placeholder="Author">
-                        <input type="number" class="inputtedData" placeholder="Pages">
+                        <input type="text" class="inputtedData" placeholder="Title" name="fname">
+                        <input type="text" class="inputtedData" placeholder="Author" name="Author">
+                        <input type="number" class="inputtedData" placeholder="Pages" name="Pages">
+                        <div class="finRead">
+                            <label for="read"> Have you read it?</label><br>
+                            <input type="checkbox" class="inputtedData" id="read" name="read">
+                        </div>
                         <input id="sub-btn" type="submit" value="Submit">
                     </form>
+
                 </div>
             </div>
 

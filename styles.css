@@ -3,7 +3,7 @@ html {
     margin: 0;
     padding:0;
     color: aliceblue;
-   
+    font-family: 'Roboto', sans-serif;
 }
 body{
     margin: 0;
@@ -40,6 +40,54 @@ button{
     background: rgb(4, 28, 50);
     color: aliceblue;
 }
+.buttonRead{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 5px;
+    background: rgb(0, 184, 70);
+    color: aliceblue;
+    font-size: 20px;
+    height: 50px;
+
+}
+.buttonRead:hover{
+    background: rgb(0, 78, 131);
+    transition-duration: .2s;
+    border: solid 1px rgb(236, 179, 101)
+}
+
+.buttonRead:active{
+    background: rgb(6, 70, 99);
+    transition-duration: .1s;
+    border: solid 1px rgb(236, 179, 101)
+}
+
+.buttonNotRead{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 5px;
+    background: rgb(240, 75, 75);
+    color: aliceblue;
+    font-size: 20px;
+    height: 50px;
+
+}
+.buttonNotRead:hover{
+    background: rgb(218, 95, 95);
+    transition-duration: .2s;
+    border: solid 1px rgb(236, 179, 101)
+}
+
+.buttonNotRead:active{
+    background: rgb(6, 70, 99);
+    transition-duration: .1s;
+    border: solid 1px rgb(236, 179, 101)
+}
+
 button:hover{
     background: rgb(4, 28, 50);
     transition-duration: .2s;
@@ -74,8 +122,14 @@ button:active{
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
+.finRead{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 .modal-content {
+    display: flex;
+    justify-content: center;
     position: relative;
     top: 35%;
     background-color: #fefefe;
@@ -103,28 +157,51 @@ button:active{
     text-decoration: none;
     cursor: pointer;
 }
+
+.closeItems {
+    position: absolute;
+    top: 4px;
+    right: 16px;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.closeItems:hover,
+.closeItems:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 .last{
     display: flex;
     flex-direction: column;
 }
 .bookLibrary{
     display: grid;
-    background-color: blue;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
-    gap: 10px;
+    background-color: none;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
     min-height: calc(100vh - 240px);
     width:60%;
+    gap: 20px;
     align-self: center;
-    
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .bookItems{
-    margin: 20px;
+    position: relative;
     padding: 20px;
     height: 300px;
-    background-color: red;
+    background-color: rgb(4, 28, 50);;
     text-align: center;
-    border: 1px black;
+    border: 1px solid rgba(100, 100, 100, 0.4);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 20px;
 }
 
 
