@@ -36,13 +36,15 @@ function addBookToLibrary() {
 }
 
 function validateForm() {
-    document.getElementById("sub-btn").addEventListener("click", function () {
+    document.getElementById("sub-btn").addEventListener("click", function (event) {
+        event.preventDefault();
+
         modal.style.display = "none";
         let x = document.forms["myForm"];
         console.log(myLibrary);
         if (x[0].value.length === 0 || x[1].value.length === 0 || x[2].value.length === 0) {
             alert("All input must be filled out");
-
+            location.reload();
         } else {
             myLibrary.push(new Book(inputtedData[0].value, inputtedData[1].value, inputtedData[2].value, inputtedData[3].checked));
             localStorage.setItem("bookList", JSON.stringify(myLibrary));
